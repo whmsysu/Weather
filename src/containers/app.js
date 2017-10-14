@@ -19,18 +19,25 @@ class App extends Component {
       super(props);
       Location.get(function (err, position) {
         //=> null, {coords: {...}, timestamp: ...}
-        const lat = position.coords.latitude;
-        const lng = position.coords.longitude;
-        GoogleMapsLoader.load(function(google){
-          new google.maps.Geocoder().geocode({'location': {lat, lng} }, (results, status) =>{
-            for (let i=0; i<results[0].address_components.length; i++){
-                if (results[0].address_components[i].types[0] === "locality" ){
-                  props.fetchWeather(results[0].address_components[i].long_name);
-                  break;
-                }
-            }
+        if (err == null){
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          GoogleMapsLoader.load(function(google){
+            new google.maps.Geocoder().geocode({'location': {lat, lng} }, (results, status) =>{
+              for (let i=0; i<results[0].address_components.length; i++){
+                  if (results[0].address_components[i].types[0] === "locality" ){
+                    props.fetchWeather(results[0].address_components[i].long_name);
+                    break;
+                  }
+              }
+            });
           });
-        });
+        }
+        else{
+          console.log(err);
+          //default city new york
+          props.fetchWeather('New York');
+        }
       });
   }
 

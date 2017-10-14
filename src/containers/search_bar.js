@@ -12,7 +12,6 @@ class SearchBar extends Component {
       super(props);
       this.state = {
         term: '',
-        autocomplete_array: []
       };
   }
 
