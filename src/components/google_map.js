@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapsLoader from 'google-maps';
-import { GOOGLE_MAP_API_KEY } from '../keys';
 
-GoogleMapsLoader.KEY = GOOGLE_MAP_API_KEY;
+GoogleMapsLoader.KEY = require('../config/keys').GOOGLE_MAP_API_KEY;
 
 class GoogleMap extends Component{
   componentDidMount(){

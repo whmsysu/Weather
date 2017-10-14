@@ -5,10 +5,8 @@ import GoogleMap from '../components/google_map';
 import Spinner from 'react-spinkit';
 
 import GoogleMapsLoader from 'google-maps';
-import { GOOGLE_MAP_API_KEY } from '../keys';
 
-GoogleMapsLoader.KEY = GOOGLE_MAP_API_KEY;
-
+GoogleMapsLoader.KEY = require('../config/keys').GOOGLE_MAP_API_KEY;
 
 class WeatherList extends Component{
   renderWeather(cityData){
@@ -44,7 +42,7 @@ class WeatherList extends Component{
 
       return (
         <div style={ style }>
-          Retrieve current weather
+          Retrieving current weather
           <Spinner name="ball-beat" />
         </div>
       );

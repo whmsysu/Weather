@@ -1,8 +1,10 @@
 /node_modules
 bundle.js
 npm-debug.log
+
+dev.js
+
 .DS_Store
-keys.js
 /build
 
 # IntelliJ

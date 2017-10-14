@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-import { OPEN_WEATHER_MAP_API_KEY } from '../keys';
-
-const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${OPEN_WEATHER_MAP_API_KEY}`;
+const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${ require('../config/keys').OPEN_WEATHER_MAP_API_KEY }`;
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 

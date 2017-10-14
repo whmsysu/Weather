@@ -9,9 +9,7 @@ import { fetchWeather } from '../actions/index';
 
 import GoogleMapsLoader from 'google-maps';
 
-import { GOOGLE_MAP_API_KEY } from '../keys';
-
-GoogleMapsLoader.KEY = GOOGLE_MAP_API_KEY;
+GoogleMapsLoader.KEY = require('../config/keys').GOOGLE_MAP_API_KEY;
 
 
 class App extends Component {
