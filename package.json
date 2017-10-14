@@ -4,6 +4,10 @@
   "description": "Weather website displays forecast for specific city in US",
   "main": "index.js",
   "repository": "git@github.com/whmsysu/Weather.git",
+  "engines": {
+    "node": "8.6.0",
+    "npm": "5.4.2"
+  },
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.prod.config.js --progress",
     "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress",
