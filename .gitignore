@@ -3,6 +3,7 @@ bundle.js
 npm-debug.log
 
 dev.js
+prod.js
 
 .DS_Store
 /build
