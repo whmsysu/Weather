@@ -6,7 +6,7 @@ module.exports = {
     './src/index.js'
   ],
   output: {
-    path: `${__dirname}/build`,
+    path: `../weather-build`,
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -36,11 +36,11 @@ module.exports = {
     new CopyWebpackPlugin(
     [{
       from: './*.html',
-      to: `${__dirname}/build`
+      to: `../weather-build`
     },
     {
       from: './style',
-      to: `${__dirname}/build/style`
+      to: `../weather-build/style`
     }])
   ]
 };
